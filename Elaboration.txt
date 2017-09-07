@@ -1,0 +1,8 @@
+Column 1: B - What type of chocolate do you prefer?
+
+
+
+Column 2: D - What is your gender?
+
+
+
