@@ -9,15 +9,17 @@ import pandas as pd
 
 import csv
 
-with open('Grain-data.csv') as file:
-    reader = csv.reader(file)
+row_count = 0
+newlines = 0
 
-    row_count = 0
-    newlines = 0
-    for row in reader:
-        print("Row: ", row)
-        row_count += 1
-        if row.count('\n'):
-            newlines += 1
-    print("row_count:", row_count)
-    print("newlines:", newlines)
+for row in csv.reader(open('Grain-data.csv'), delimiter=';'):
+    print("Land: {}, row: {}".format(row['Landgrabbed'], row))
+    # row_count += 1
+    # if row.count('\n'):
+    #     newlines += 1
+
+    with open("test.txt", "a") as myfile:
+        myfile.write(row)
+
+print("row_count:", row_count)
+print("newlines:", newlines)
