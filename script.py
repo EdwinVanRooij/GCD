@@ -21,18 +21,34 @@ projected_investment = 'Projected investment'  # 7
 status_of_deal = 'Status of deal'  # 8
 summary = 'Summary'  # 9
 
+projected_investment_new = 'Projected investment (US$ millions)'  # 7
+
 count = 0
 
 
 def clean_cell(cell):
     # Remove whitespace
-    result = "".join(cell.split())
+    # result = "".join(cell.split())
+    result = cell.strip()
 
     # If result is now empty, replace with some text
     if not result:
         return "Missing"
 
     return result
+
+
+def transform_investment(investment):
+    # Don't do anything if the value is missing
+    if investment == "Missing":
+        return investment
+
+    # Do transformation
+    investment = investment[3:]  # removes first three characters
+    investment = investment.split(' ', 1)[0]  # removes everything starting at the first space
+
+    print(investment)
+    return investment
 
 
 # Open the dirty data file
@@ -54,6 +70,7 @@ with open("Data-python.csv") as file_in:
             hectares,
             production,
             projected_investment,
+            projected_investment_new,
             status_of_deal,
             summary,
         ])
@@ -70,6 +87,7 @@ with open("Data-python.csv") as file_in:
                 clean_cell(record[hectares]),
                 clean_cell(record[production]),
                 clean_cell(record[projected_investment]),
+                transform_investment(clean_cell(record[projected_investment])),
                 clean_cell(record[status_of_deal]),
                 clean_cell(record[summary]),
             ])
