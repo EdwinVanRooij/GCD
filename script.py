@@ -24,8 +24,15 @@ summary = 'Summary'  # 9
 count = 0
 
 
-def remove_whitespace(param):
-    return "".join(param.split())
+def clean_cell(cell):
+    # Remove whitespace
+    result = "".join(cell.split())
+
+    # If result is now empty, replace with some text
+    if not result:
+        return "Missing"
+
+    return result
 
 
 # Open the dirty data file
@@ -54,17 +61,17 @@ with open("Data-python.csv") as file_in:
 
         # Loop over every record in the dirty data file
         for record in reader:
-            # Write a row without whitespace
+            # Clean the cell
             writer.writerow([
-                remove_whitespace(record[landgrabbed]),
-                remove_whitespace(record[landgrabber]),
-                remove_whitespace(record[base]),
-                remove_whitespace(record[sector]),
-                remove_whitespace(record[hectares]),
-                remove_whitespace(record[production]),
-                remove_whitespace(record[projected_investment]),
-                remove_whitespace(record[status_of_deal]),
-                remove_whitespace(record[summary]),
+                clean_cell(record[landgrabbed]),
+                clean_cell(record[landgrabber]),
+                clean_cell(record[base]),
+                clean_cell(record[sector]),
+                clean_cell(record[hectares]),
+                clean_cell(record[production]),
+                clean_cell(record[projected_investment]),
+                clean_cell(record[status_of_deal]),
+                clean_cell(record[summary]),
             ])
             count += 1
 
