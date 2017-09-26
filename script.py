@@ -94,3 +94,5 @@ with open("Data-python.csv") as file_in:
             count += 1
 
 print("Rows written:", count)
+
+# I have used regular expressions in past week's assignment, and used trim & substitute formulas as well.
