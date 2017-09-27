@@ -1,6 +1,6 @@
 import sys
 
-salesTotal = 0
+highestSale = 0
 oldKey = None
 
 for line in sys.stdin:
@@ -11,12 +11,13 @@ for line in sys.stdin:
 
     thisKey, thisSale = data
     if oldKey and oldKey != thisKey:
-        print(oldKey, "\t", salesTotal)
+        print(oldKey, "\t", highestSale)
         oldKey = thisKey
-        salesTotal = 0
+        highestSale = 0
 
     oldKey = thisKey
-    salesTotal += float(thisSale)
+    if float(thisSale) > highestSale:
+        highestSale = float(thisSale)
 
-if oldKey != None:
-    print(oldKey, "\t", salesTotal)
+if oldKey is not None:
+    print(oldKey, "\t", highestSale)
