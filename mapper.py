@@ -10,7 +10,7 @@ for line in sys.stdin:
 
     if len(data) == 6:
         # Now print out the data that will be passed to the reducer
-        print("{0}\t{1}".format(store, cost))
+        print("{0}\t{1}\t{2}".format(store, 1, cost))
 
 
 # 2012-01-01	09:00	San Jose	Men's Clothing	214.05	Amex
