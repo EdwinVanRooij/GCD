@@ -42,7 +42,13 @@ s.mapfn = mapfn
 s.reducefn = reducefn
 
 results = s.run_server(password="changeme")
-print(results)
+# print(results)
+
+results = sorted(results.items(), key=lambda x: x[1], reverse=True)
+i = open('sorted.txt', 'w')
+i.write(str(results))
+i.close()
+
 
 # # !/usr/bin/env python
 # import mincemeat
