@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import mincemeat
 import glob
-import re
 
 # data = ["Humpty Dumpty sat on a wall",
 #         "Humpty Dumpty had a great fall",
@@ -45,6 +44,8 @@ allStopWords = {'about': 1, 'above': 1, 'after': 1, 'again': 1, 'against': 1, 'a
 
 
 def mapfn(k, v):
+    import re
+
     for w in v.split():
 
         w = re.sub(r'\W+', '', w)  # strip non-alphanumeric characters

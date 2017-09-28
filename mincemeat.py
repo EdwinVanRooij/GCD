@@ -25,7 +25,6 @@
 
 import asynchat
 import asyncore
-import re
 import pickle
 import hashlib
 import hmac
