@@ -9,7 +9,7 @@ import re
 #         "Couldn't put Humpty together again",
 #         ]
 
-all_files = glob.glob('Gutenberg/Gutenberg Small/*.*')
+all_files = glob.glob('Gutenberg/Gutenberg SF/*.*')
 
 
 # all_files = glob.glob('Gutenberg/TestDir/*.*')
@@ -50,7 +50,7 @@ def mapfn(k, v):
         w = re.sub(r'\W+', '', w)  # strip non-alphanumeric characters
 
         # Omit one-letter words and 'stopwords'
-        if len(w) == 1 or w in allStopWords:
+        if len(w) <= 1 or w in allStopWords:
             continue
 
         yield w, 1
