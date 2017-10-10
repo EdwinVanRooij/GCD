@@ -1,0 +1,69 @@
+[
+  {
+    "name": "Bob",
+    "statuses": [
+      {
+        "date": "2012-04-23T18:25:43.511Z",
+        "text": "It's a sunny day! #feelingGood",
+        "comments": [
+          {
+            "date": "2012-05-23T18:25:43.511Z",
+            "text": "Indeed it is!",
+            "commenter": {
+              "name": "Sara"
+            }
+          },
+          {
+            "date": "2012-06-23T18:25:43.511Z",
+            "text": "I love it!",
+            "commenter": {
+              "name": "Jake"
+            }
+          }
+        ]
+      },
+      {
+        "date": "2012-08-25T18:25:43.511Z",
+        "text": "It's so rainy right now...",
+        "comments": []
+      }
+    ]
+  },
+  {
+    "name": "Jake",
+    "statuses": [
+      {
+        "date": "2012-01-23T18:25:43.511Z",
+        "text": "Lazy sunday.. #sleepy",
+        "comments": [
+          {
+            "date": "2012-02-23T18:25:43.511Z",
+            "text": "Tell me about it!",
+            "commenter": {
+              "name": "Sara"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sara",
+    "statuses": []
+  },
+  {
+    "name": "Hank",
+    "statuses": [
+      {
+        "date": "2013-01-23T18:25:43.511Z",
+        "text": "Just got home.",
+        "comments": [ ]
+      },
+      {
+        "date": "2013-03-23T18:25:43.511Z",
+        "text": "Going to bed.",
+        "comments": [ ]
+      }
+    ]
+  }
+]
